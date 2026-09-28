@@ -1,0 +1,155 @@
+{
+  "project_title": "YouTube Ambient Content Factory Command Center",
+  "app_type": "dashboard",
+  "theme_strategy": {
+    "default_mode": "dark",
+    "mode_toggle_enabled": true,
+    "aesthetic_direction": "Tactical Media Command Center with ambient studio glow. Deep charcoal slate surfaces, neon status triggers, precision grid borders, dark-screen relaxation visual cues."
+  },
+  "channel_branding": {
+    "noadsNoise": {
+      "name": "noadsNoise",
+      "focus": "Rain, Thunder, White/Brown/Pink Noise, Dark Screen Sleep Sounds",
+      "accent_color": "#38BDF8",
+      "bg_tint": "#0F172A",
+      "badge_style": "bg-sky-500/10 text-sky-400 border-sky-500/30",
+      "hero_image": "https://images.unsplash.com/photo-1727373217103-d64866ce6ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxyZWxheGluZyUyMHJhaW4lMjBhbWJpZW50JTIwc3Rvcm0lMjBmb3Jlc3QlMjBzbGVlcHxlbnwwfHx8fDE3OTA2MDI2MzZ8MA&ixlib=rb-4.1.0&q=85"
+    },
+    "Noadscolors": {
+      "name": "Noadscolors",
+      "focus": "Solid Color Screens, Meditation, Chromatherapy & Color Gradients",
+      "accent_color": "#F43F5E",
+      "bg_tint": "#1F1122",
+      "badge_style": "bg-rose-500/10 text-rose-400 border-rose-500/30",
+      "hero_image": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwYWJzdHJhY3QlMjBjb2xvciUyMGdyYWRpZW50JTIwdGhlcmFweXxlbnwwfHx8fDE3OTA2MDI2MzZ8MA&ixlib=rb-4.1.0&q=85"
+    },
+    "Noadshertz": {
+      "name": "Noadshertz",
+      "focus": "Healing Frequencies (432Hz, 528Hz), Solfeggio, Binaural Beats",
+      "accent_color": "#10B981",
+      "bg_tint": "#06201B",
+      "badge_style": "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+      "hero_image": "https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxtZWRpdGF0aW9uJTIwYWJzdHJhY3QlMjBjb2xvciUyMGdyYWRpZW50JTIwdGhlcmFweXxlbnwwfHx8fDE3OTA2MDI2MzZ8MA&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Plus Jakarta Sans, Outfit, sans-serif",
+      "weights": ["font-bold", "font-semibold"],
+      "h1": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight",
+      "h3": "text-lg sm:text-xl font-semibold tracking-normal",
+      "h4": "text-base font-semibold"
+    },
+    "body": {
+      "font_family": "Inter, system-ui, sans-serif",
+      "weights": ["font-normal", "font-medium"],
+      "base": "text-sm sm:text-base leading-relaxed text-slate-300",
+      "small": "text-xs text-slate-400"
+    },
+    "monospace": {
+      "font_family": "JetBrains Mono, Fira Code, monospace",
+      "usage": "FFmpeg render logs, job IDs, Hz frequency readings, audio sample rates, video timestamps, execution time"
+    }
+  },
+  "colors": {
+    "background_dark": "#090D16",
+    "surface_dark": "#111827",
+    "surface_hover_dark": "#1F2937",
+    "border_dark": "rgba(255, 255, 255, 0.08)",
+    "border_glow": "rgba(56, 189, 248, 0.2)",
+    "primary_accent": "#0ea5e9",
+    "secondary_accent": "#8b5cf6",
+    "status_colors": {
+      "pending": { "bg": "bg-amber-500/10", "text": "text-amber-400", "border": "border-amber-500/20" },
+      "generating": { "bg": "bg-blue-500/10", "text": "text-blue-400", "border": "border-blue-500/20" },
+      "rendering": { "bg": "bg-purple-500/10", "text": "text-purple-400", "border": "border-purple-500/20" },
+      "uploading": { "bg": "bg-cyan-500/10", "text": "text-cyan-400", "border": "border-cyan-500/20" },
+      "completed": { "bg": "bg-emerald-500/10", "text": "text-emerald-400", "border": "border-emerald-500/20" },
+      "failed": { "bg": "bg-rose-500/10", "text": "text-rose-400", "border": "border-rose-500/20" }
+    }
+  },
+  "visual_enhancers": {
+    "surface_style": "Grid-bordered dark glassmorphism (backdrop-blur-md bg-slate-900/80 border border-slate-800/80 rounded-xl)",
+    "glow_effects": "Subtle ambient radial light drop behind key metric cards and channel hero sections",
+    "grid_borders": "1px crisp slate borders with subtle hover highlight to give a technical modular dashboard feel",
+    "audio_visualizer": "Canvas / SVG animated wave bars for rendering and Hz preview monitors"
+  },
+  "layout_architecture": {
+    "structure": "Fixed collapsible sidebar navigation with studio brand header and sticky top bar containing YouTube OAuth status, live server workload indicator, quick action 'Batch Produce' button, and search.",
+    "views": [
+      {
+        "id": "channels-dashboard",
+        "title": "Channel Command Overview",
+        "description": "3 channel cards with channel stats, YouTube sync status, active queue, total generated hours, subscriber & view counters."
+      },
+      {
+        "id": "content-matrix",
+        "title": "Content Matrix Grid",
+        "description": "Matrix grid mapping Color/Noise type vs Duration (1h, 3h, 8h, 10h, 12h) vs Format (Long 16:9 vs Shorts 9:16) with clear Filled / Missing status badges & direct quick-trigger buttons."
+      },
+      {
+        "id": "production-queue",
+        "title": "FFmpeg Video Pipeline Board",
+        "description": "Live job queue board with status stages (Pending → Audio Gen → FFmpeg Rendering → Metadata → YouTube Uploading → Done) with progress bars, live log terminal view, and job action controls."
+      },
+      {
+        "id": "studio-factory",
+        "title": "Production Generator Studio",
+        "description": "Interactive render studio form: Channel selection, Preset picker (e.g., Deep Sleep Black Screen + Heavy Rain + 432Hz, Pure Emerald 528Hz Binaural), FFmpeg parameters, thumbnail layout customizer, SEO meta auto-generator."
+      },
+      {
+        "id": "asset-gallery",
+        "title": "Asset Gallery & Thumbnails",
+        "description": "Visual grid of generated thumbnails, video previews, color samples, and audio stems with YouTube video link shortcuts."
+      },
+      {
+        "id": "scheduler",
+        "title": "Automation Scheduler",
+        "description": "Time-slot grid for automated rendering & uploading calendar (e.g. 02:00 AM daily noise video batch, 14:00 PM Hz Shorts)."
+      },
+      {
+        "id": "terminal-logs",
+        "title": "Live FFmpeg & API Logs",
+        "description": "Real-time stream terminal displaying server-side FFmpeg stdout, render speed FPS, YouTube OAuth token health, and worker queue telemetry."
+      }
+    ]
+  },
+  "image_urls": {
+    "channel_hero_rain": "https://images.unsplash.com/photo-1727373217103-d64866ce6ee8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxyZWxheGluZyUyMHJhaW4lMjBhbWJpZW50JTIwc3Rvcm0lMjBmb3Jlc3QlMjBzbGVlcHxlbnwwfHx8fDE3OTA2MDI2MzZ8MA&ixlib=rb-4.1.0&q=85",
+    "channel_hero_colors": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwYWJzdHJhY3QlMjBjb2xvciUyMGdyYWRpZW50JTIwdGhlcmFweXxlbnwwfHx8fDE3OTA2MDI2MzZ8MA&ixlib=rb-4.1.0&q=85",
+    "channel_hero_hz": "https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxtZWRpdGF0aW9uJTIwYWJzdHJhY3QlMjBjb2xvciUyMGdyYWRpZW50JTIwdGhlcmFweXxlbnwwfHx8fDE3OTA2MDI2MzZ8MA&ixlib=rb-4.1.0&q=85",
+    "ambient_nature": "https://images.unsplash.com/photo-1666241815101-89bf76c377dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHxffHxlbnwwfHx8fDE3OTA2MDI2MzZ8MA&ixlib=rb-4.1.0&q=85",
+    "gradient_warm": "https://images.unsplash.com/photo-1646038572806-3d5f4252c567?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHxtZWRpdGF0aW9uJTIwYWJzdHJhY3QlMjBjb2xvciUyMGdyYWRpZW50JTIwdGhlcmFweXxlbnwwfHx8fDE3OTA2MDI2M3wMA&ixlib=rb-4.1.0&q=85"
+  },
+  "component_guidelines": {
+    "use_shadcn": true,
+    "interactive_components": [
+      "Dialog / Modal for detailed FFmpeg job inspection and manual re-render",
+      "Tabs for switching views and filtering channels",
+      "Select & Switch for render settings and OAuth config",
+      "Progress bar for live FFmpeg render percentage",
+      "Badge for video duration, format (16:9 / 9:16), and job status",
+      "Sonner toasts for production batch trigger notifications and API sync alerts"
+    ]
+  },
+  "testing_and_accessibility": {
+    "data_testid_rule": "ALL interactive components, metric numbers, action buttons, channel cards, matrix cells, job status badges, modal elements, and log entries MUST include data-testid in kebab-case format.",
+    "examples": [
+      "data-testid=\"channel-card-noadsnoise\"",
+      "data-testid=\"matrix-cell-black-10h-long\"",
+      "data-testid=\"btn-generate-now\"",
+      "data-testid=\"job-status-badge-job-102\"",
+      "data-testid=\"job-detail-modal-close\"",
+      "data-testid=\"live-log-terminal\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a production-ready, highly functional Youtube Ambient Content Factory Control Panel.",
+    "Support all 3 channels explicitly: noadsNoise, Noadscolors, Noadshertz with tailored branding, badges, and presets.",
+    "Ensure the Content Matrix grid clearly highlights missing video combinations and offers one-click generation.",
+    "Provide full FFmpeg job pipeline visualization with real-time simulated or backend progress, live log terminal, thumbnail layout generator, SEO metadata editor, and YouTube upload status.",
+    "Include a Scheduler view for automated video batch production time slots.",
+    "Ensure all interactive elements have data-testid attributes for automated verification."
+  ]
+}

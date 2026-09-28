@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 33% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 40% 9%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 60%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 350 89% 55%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 199 89% 48%;
+    --radius: 0.75rem;
+}
+
+* {
+    border-color: hsl(var(--border));
+}
+
+body {
+    margin: 0;
+    background: #070B12;
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono-x {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Ambient command-center backdrop */
+.app-bg {
+    background:
+        radial-gradient(900px circle at 12% -5%, rgba(56, 189, 248, 0.08), transparent 45%),
+        radial-gradient(800px circle at 95% 8%, rgba(244, 63, 94, 0.06), transparent 42%),
+        radial-gradient(700px circle at 60% 110%, rgba(16, 185, 129, 0.07), transparent 45%),
+        #070B12;
+    min-height: 100vh;
+}
+
+.glass {
+    background: rgba(17, 24, 39, 0.72);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass:hover {
+    border-color: rgba(56, 189, 248, 0.22);
+}
+
+.grid-lines {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 42px 42px;
+}
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.22); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
+
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.35} }
+.live-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+
+.terminal {
+    font-family: 'JetBrains Mono', monospace;
+    background: #05080E;
+    border: 1px solid rgba(255,255,255,0.06);
+}
