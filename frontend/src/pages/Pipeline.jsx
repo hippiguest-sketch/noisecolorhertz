@@ -4,7 +4,7 @@ import { RefreshCw, Trash2, UploadCloud, Play, Loader2, ExternalLink } from "luc
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { StatusBadge } from "@/components/StatusBadge";
 import { api, CHANNEL_META, mediaUrl, durationTitle } from "@/lib/factoryApi";
 
@@ -82,6 +82,7 @@ export default function Pipeline() {
             <>
               <DialogHeader>
                 <DialogTitle className="font-heading text-white text-lg pr-6 leading-snug">{detail.title}</DialogTitle>
+                <DialogDescription className="text-xs text-slate-500 font-mono-x">{detail.id}</DialogDescription>
               </DialogHeader>
               <div className="space-y-4">
                 <div className="flex items-center gap-2 flex-wrap">

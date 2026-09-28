@@ -20,14 +20,14 @@ from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 
+ROOT_DIR = Path(__file__).parent
+load_dotenv(ROOT_DIR / ".env")  # must run before importing youtube_service (reads PUBLIC_URL)
+
 import factory
 import youtube_service as yt
 from metadata import generate_metadata
 from presets import CHANNELS as CH, duration_title as DT
 from factory import RENDER_CAP_SECONDS
-
-ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / ".env")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("factory")
@@ -126,7 +126,6 @@ async def process_job(job: dict):
         "format": job["format"], "duration_minutes": job["duration_minutes"],
         "render_seconds": min(job["duration_minutes"] * 60, RENDER_CAP_SECONDS),
     }
-    log = lambda m: asyncio.create_task(add_log(m, jid, channel_key=job["channel_key"]))  # noqa
 
     async def set_stage(stage, progress, status="processing"):
         await db.jobs.update_one({"id": jid}, {"$set": {"stage": stage, "progress": progress,
@@ -396,6 +395,8 @@ async def delete_job(job_id: str):
     if job and job.get("matrix_cell_id"):
         await db.matrix.update_one({"id": job["matrix_cell_id"]},
                                    {"$set": {"status": "missing", "job_id": None}})
+    import shutil
+    shutil.rmtree(factory.GENERATED_DIR / job_id, ignore_errors=True)
     await db.jobs.delete_one({"id": job_id})
     return {"success": True}
 
